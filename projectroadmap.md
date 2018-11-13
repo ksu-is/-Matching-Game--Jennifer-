@@ -1,7 +1,5 @@
-**11-13-18**
-
-
-**Tasks to Complete Application Development Project**
+**11-13-18** <br />
+**Tasks to Complete Application Development Project** <br />
 
 
     1. Install Pygame onto my computer. - Done
