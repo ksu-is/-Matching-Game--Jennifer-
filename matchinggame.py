@@ -2,8 +2,12 @@
 # By Al Sweigart al@inventwithpython.com
 # http://inventwithpython.com/pygame
 # Released under a "Simplified BSD" license
+<<<<<<< HEAD
 # Add instructions Welcome to Matching Game. The object is to find all of the matching icons by selecting
 # each square one by one until you have remembered and selected and matched all of the icons.
+=======
+# evaluated by Dominic
+>>>>>>> 66147666d53f7c331fe9207cf72b8f0c9a8f0782
 
 import random, pygame, sys
 from pygame.locals import *
