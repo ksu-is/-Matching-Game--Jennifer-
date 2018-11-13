@@ -2,6 +2,8 @@
 # By Al Sweigart al@inventwithpython.com
 # http://inventwithpython.com/pygame
 # Released under a "Simplified BSD" license
+# Add instructions Welcome to Matching Game. The object is to find all of the matching icons by selecting
+# each square one by one until you have remembered and selected and matched all of the icons.
 
 import random, pygame, sys
 from pygame.locals import *
@@ -11,7 +13,7 @@ WINDOWWIDTH = 640 # size of window's width in pixels
 WINDOWHEIGHT = 480 # size of windows' height in pixels
 REVEALSPEED = 8 # speed boxes' sliding reveals and covers
 BOXSIZE = 40 # size of box height & width in pixels
-GAPSIZE = 10 # size of gap between boxes in pixels
+GAPSIZE = 5 # size of gap between boxes in pixels EDIT: WAS 10
 BOARDWIDTH = 10 # number of columns of icons
 BOARDHEIGHT = 7 # number of rows of icons
 assert (BOARDWIDTH * BOARDHEIGHT) % 2 == 0, 'Board needs to have an even number of boxes for pairs of matches.'
@@ -40,6 +42,9 @@ SQUARE = 'square'
 DIAMOND = 'diamond'
 LINES = 'lines'
 OVAL = 'oval'
+
+# grass = pygame.image.load("resources/images/grass.png")
+# castle = pygame.image.load("resources/images/castle.png")
 
 ALLCOLORS = (RED, GREEN, BLUE, YELLOW, ORANGE, PURPLE, CYAN)
 ALLSHAPES = (DONUT, SQUARE, DIAMOND, LINES, OVAL)
@@ -96,7 +101,7 @@ def main():
 
                     if icon1shape != icon2shape or icon1color != icon2color:
                         # Icons don't match. Re-cover up both selections.
-                        pygame.time.wait(1000) # 1000 milliseconds = 1 sec
+                        pygame.time.wait(1) # 1000 milliseconds = 1 sec
                         coverBoxesAnimation(mainBoard, [(firstSelection[0], firstSelection[1]), (boxx, boxy)])
                         revealedBoxes[firstSelection[0]][firstSelection[1]] = False
                         revealedBoxes[boxx][boxy] = False
