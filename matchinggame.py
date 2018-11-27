@@ -1,4 +1,5 @@
-# Memory Puzzle
+'''
+ Memory Puzzle
 # By Al Sweigart al@inventwithpython.com
 # http://inventwithpython.com/pygame
 # Released under a "Simplified BSD" license
@@ -7,10 +8,10 @@
 # each square one by one until you have remembered and selected and matched all of the icons.
 =======
 # evaluated by Dominic
->>>>>>> 66147666d53f7c331fe9207cf72b8f0c9a8f0782
-
-import random, pygame, sys
+'''
+import random, pygame, sys, os, threading, atexit
 from pygame.locals import *
+
 
 FPS = 30 # frames per second, the general speed of the program
 WINDOWWIDTH = 640 # size of window's width in pixels
@@ -28,17 +29,17 @@ YMARGIN = int((WINDOWHEIGHT - (BOARDHEIGHT * (BOXSIZE + GAPSIZE))) / 2)
 GRAY     = (100, 100, 100)
 NAVYBLUE = ( 60,  60, 100)
 WHITE    = (255, 255, 255)
-RED      = (255,   0,   0)
-GREEN    = (  0, 255,   0)
+RED      = (194,  31,  31)
+GREEN    = (  3,  79,  42)
 BLUE     = (  0,   0, 255)
 YELLOW   = (255, 255,   0)
 ORANGE   = (255, 128,   0)
 PURPLE   = (255,   0, 255)
 CYAN     = (  0, 255, 255)
 
-BGCOLOR = NAVYBLUE
+BGCOLOR = RED
 LIGHTBGCOLOR = GRAY
-BOXCOLOR = WHITE
+BOXCOLOR = GREEN
 HIGHLIGHTCOLOR = BLUE
 
 DONUT = 'donut'
@@ -55,6 +56,11 @@ ALLSHAPES = (DONUT, SQUARE, DIAMOND, LINES, OVAL)
 assert len(ALLCOLORS) * len(ALLSHAPES) * 2 >= BOARDWIDTH * BOARDHEIGHT, "Board is too big for the number of shapes/colors defined."
 
 def main():
+    t = threading.Timer(1.0, hello)
+    t.start()
+
+    atexit.register(exit_handler)
+
     global FPSCLOCK, DISPLAYSURF
     pygame.init()
     FPSCLOCK = pygame.time.Clock()
@@ -62,7 +68,7 @@ def main():
 
     mousex = 0 # used to store x coordinate of mouse event
     mousey = 0 # used to store y coordinate of mouse event
-    pygame.display.set_caption('Memory Game')
+    pygame.display.set_caption('Memory Game: Christmas Edition')
 
     mainBoard = getRandomizedBoard()
     revealedBoxes = generateRevealedBoxesData(False)
@@ -103,7 +109,7 @@ def main():
                     icon1shape, icon1color = getShapeAndColor(mainBoard, firstSelection[0], firstSelection[1])
                     icon2shape, icon2color = getShapeAndColor(mainBoard, boxx, boxy)
 
-                    if icon1shape != icon2shape or icon1color != icon2color:
+                    if icon1shape != icon2shape: # or icon1color != icon2color:
                         # Icons don't match. Re-cover up both selections.
                         pygame.time.wait(1) # 1000 milliseconds = 1 sec
                         coverBoxesAnimation(mainBoard, [(firstSelection[0], firstSelection[1]), (boxx, boxy)])
@@ -130,6 +136,33 @@ def main():
         pygame.display.update()
         FPSCLOCK.tick(FPS)
 
+SECONDS = 0
+isTimerRunning = True
+
+def hello():
+    global SECONDS
+
+    SECONDS = SECONDS + 1
+    secondsText = str(SECONDS) + " Seconds"
+    print(str(SECONDS) + " Seconds")
+
+    pygame.display.set_caption('Memory Game: Christmas Edition - ' + secondsText)
+
+    if isTimerRunning:
+        t = threading.Timer(1.0, hello)
+        t.start()
+
+def exit_handler():
+    global isTimerRunning
+
+    isTimerRunning = False
+    print('My application is ending!')
+
+def getAbsolutePath(filename):
+    script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
+    abs_file_path = os.path.join(script_dir, filename)
+
+    return abs_file_path
 
 def generateRevealedBoxesData(val):
     revealedBoxes = []
@@ -192,21 +225,26 @@ def drawIcon(shape, color, boxx, boxy):
     half =    int(BOXSIZE * 0.5)  # syntactic sugar
 
     left, top = leftTopCoordsOfBox(boxx, boxy) # get pixel coords from board coords
+    inset = 2
+    imageHeight = BOXSIZE - (inset * 2)
+    imageWidth = BOXSIZE - (inset * 2)
+
     # Draw the shapes
     if shape == DONUT:
-        pygame.draw.circle(DISPLAYSURF, color, (left + half, top + half), half - 5)
-        pygame.draw.circle(DISPLAYSURF, BGCOLOR, (left + half, top + half), quarter - 5)
+        imageSurface = pygame.transform.scale(pygame.image.load('bells.png'), (imageHeight, imageWidth))
+        DISPLAYSURF.blit(imageSurface, (left + inset, top + inset))
     elif shape == SQUARE:
-        pygame.draw.rect(DISPLAYSURF, color, (left + quarter, top + quarter, BOXSIZE - half, BOXSIZE - half))
+        imageSurface = pygame.transform.scale(pygame.image.load('candygold.png'), (imageHeight, imageWidth))
+        DISPLAYSURF.blit(imageSurface, (left + inset, top + inset))
     elif shape == DIAMOND:
-        pygame.draw.polygon(DISPLAYSURF, color, ((left + half, top), (left + BOXSIZE - 1, top + half), (left + half, top + BOXSIZE - 1), (left, top + half)))
+        imageSurface = pygame.transform.scale(pygame.image.load('snowman2.png'), (imageHeight, imageWidth))
+        DISPLAYSURF.blit(imageSurface, (left + inset, top + inset))
     elif shape == LINES:
-        for i in range(0, BOXSIZE, 4):
-            pygame.draw.line(DISPLAYSURF, color, (left, top + i), (left + i, top))
-            pygame.draw.line(DISPLAYSURF, color, (left + i, top + BOXSIZE - 1), (left + BOXSIZE - 1, top + i))
+        imageSurface = pygame.transform.scale(pygame.image.load('wreath1.png'), (imageHeight, imageWidth))
+        DISPLAYSURF.blit(imageSurface, (left + inset, top + inset))
     elif shape == OVAL:
-        pygame.draw.ellipse(DISPLAYSURF, color, (left, top + quarter, BOXSIZE, half))
-
+        imageSurface = pygame.transform.scale(pygame.image.load('xtree1.png'), (imageHeight, imageWidth))
+        DISPLAYSURF.blit(imageSurface, (left + inset, top + inset))
 
 def getShapeAndColor(board, boxx, boxy):
     # shape value for x, y spot is stored in board[x][y][0]
