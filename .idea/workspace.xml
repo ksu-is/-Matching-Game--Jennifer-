@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30cfa337-c155-4585-a06a-d864e4ee0830" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/timer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matchinggame.py" beforeDir="false" afterPath="$PROJECT_DIR$/matchinggame.py" afterDir="false" />
-    </list>
+    <list default="true" id="30cfa337-c155-4585-a06a-d864e4ee0830" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/matchinggame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="112" selection-end-line="339" />
+            <state relative-caret-position="457">
+              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
               <folding>
                 <element signature="e#389#438#0" expanded="true" />
               </folding>
@@ -299,8 +295,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/matchinggame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="112" selection-end-line="339" />
+        <state relative-caret-position="457">
+          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
           <folding>
             <element signature="e#389#438#0" expanded="true" />
           </folding>
