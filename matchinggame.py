@@ -9,13 +9,13 @@
 =======
 # evaluated by Dominic
 '''
-import random, pygame, sys, os, threading, atexit
+import random, pygame, sys, os, threading
 from pygame.locals import *
 
 
-FPS = 30 # frames per second, the general speed of the program
+FPS = 20 # frames per second, the general speed of the program
 WINDOWWIDTH = 640 # size of window's width in pixels
-WINDOWHEIGHT = 480 # size of windows' height in pixels
+WINDOWHEIGHT = 700 # size of windows' height in pixels
 REVEALSPEED = 8 # speed boxes' sliding reveals and covers
 BOXSIZE = 40 # size of box height & width in pixels
 GAPSIZE = 5 # size of gap between boxes in pixels EDIT: WAS 10
@@ -56,10 +56,7 @@ ALLSHAPES = (DONUT, SQUARE, DIAMOND, LINES, OVAL)
 assert len(ALLCOLORS) * len(ALLSHAPES) * 2 >= BOARDWIDTH * BOARDHEIGHT, "Board is too big for the number of shapes/colors defined."
 
 def main():
-    t = threading.Timer(1.0, hello)
-    t.start()
 
-    atexit.register(exit_handler)
 
     global FPSCLOCK, DISPLAYSURF
     pygame.init()
@@ -73,10 +70,13 @@ def main():
     mainBoard = getRandomizedBoard()
     revealedBoxes = generateRevealedBoxesData(False)
 
+
     firstSelection = None # stores the (x, y) of the first box clicked.
 
     DISPLAYSURF.fill(BGCOLOR)
     startGameAnimation(mainBoard)
+
+
 
     while True: # main game loop
         mouseClicked = False
@@ -135,7 +135,6 @@ def main():
         # Redraw the screen and wait a clock tick.
         pygame.display.update()
         FPSCLOCK.tick(FPS)
-
 SECONDS = 0
 isTimerRunning = True
 
@@ -155,8 +154,10 @@ def hello():
 def exit_handler():
     global isTimerRunning
 
+
     isTimerRunning = False
-    print('My application is ending!')
+    print('Merry Christmas!')
+
 
 def getAbsolutePath(filename):
     script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
@@ -316,7 +317,7 @@ def startGameAnimation(board):
 def gameWonAnimation(board):
     # flash the background color when the player has won
     coveredBoxes = generateRevealedBoxesData(True)
-    color1 = LIGHTBGCOLOR
+    color1 = BOXCOLOR
     color2 = BGCOLOR
 
     for i in range(13):
