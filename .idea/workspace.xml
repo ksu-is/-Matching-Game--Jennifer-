@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30cfa337-c155-4585-a06a-d864e4ee0830" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matchinggame.py" beforeDir="false" afterPath="$PROJECT_DIR$/matchinggame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timer.py" beforeDir="false" afterPath="$PROJECT_DIR$/timer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,12 +34,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1193" />
+          <entry key="py" value="1484" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1193" />
+          <entry key="Python" value="1484" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -48,10 +50,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/matchinggame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="156" lean-forward="true" selection-start-line="156" selection-end-line="156" />
+            <state relative-caret-position="324">
+              <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
               <folding>
                 <element signature="e#389#431#0" expanded="true" />
+                <marker date="1543800347024" expanded="true" signature="5840:5841" ph="..." />
+                <marker date="1543800347024" expanded="true" signature="5840:5897" ph="..." />
+                <marker date="1543800347024" expanded="true" signature="5945:5946" ph="..." />
               </folding>
             </state>
           </provider>
@@ -60,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/timer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="14" selection-end-column="9" />
+            <state relative-caret-position="38">
+              <caret line="2" selection-start-line="2" selection-end-line="16" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -69,8 +74,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.2/python_stubs/-1199943126/pygame/draw.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+            <state relative-caret-position="114">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              <folding>
+                <element signature="e#746#793#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,6 +103,8 @@
       <find>revealBoxesAnimation</find>
       <find>globa</find>
       <find>display</find>
+      <find>.init</find>
+      <find>mainboard</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -104,15 +114,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/timer.py" />
+        <option value="$USER_HOME$/Library/Caches/PyCharmCE2018.2/python_stubs/-1199943126/pygame/draw.py" />
         <option value="$PROJECT_DIR$/matchinggame.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="413" />
-    <option name="y" value="93" />
-    <option name="width" value="1440" />
-    <option name="height" value="874" />
+    <option name="x" value="163" />
+    <option name="y" value="80" />
+    <option name="width" value="1607" />
+    <option name="height" value="831" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -153,6 +164,27 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.matchinggame">
+    <configuration name="draw" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="-Matching-Game--Jennifer-" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Library/Caches/PyCharmCE2018.2/python_stubs/-1199943126/pygame" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Library/Caches/PyCharmCE2018.2/python_stubs/-1199943126/pygame/draw.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="matchinggame" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="-Matching-Game--Jennifer-" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -198,10 +230,12 @@
     <list>
       <item itemvalue="Python.timer" />
       <item itemvalue="Python.matchinggame" />
+      <item itemvalue="Python.draw" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.matchinggame" />
+        <item itemvalue="Python.draw" />
       </list>
     </recent_temporary>
   </component>
@@ -219,16 +253,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="150" y="71" width="1440" height="874" extended-state="0" />
+    <frame x="163" y="80" width="1607" height="831" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.032417197" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11790668" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32992327" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39897698" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18132612" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39783493" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -241,13 +275,13 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2184637" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.11828606" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3299363" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39897698" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.6224628" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39783493" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -262,6 +296,17 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/matchinggame.py</url>
+          <line>250</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.2/python_stubs/-1199943126/pygame/image.py">
@@ -283,26 +328,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.2/python_stubs/-1199943126/pygame/draw.py">
+    <entry file="file://$PROJECT_DIR$/timer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="16" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/timer.py">
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.2/python_stubs/-1199943126/pygame/draw.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="14" selection-end-column="9" />
+        <state relative-caret-position="114">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#746#793#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/matchinggame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="156" lean-forward="true" selection-start-line="156" selection-end-line="156" />
+        <state relative-caret-position="324">
+          <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
           <folding>
             <element signature="e#389#431#0" expanded="true" />
+            <marker date="1543800347024" expanded="true" signature="5840:5841" ph="..." />
+            <marker date="1543800347024" expanded="true" signature="5840:5897" ph="..." />
+            <marker date="1543800347024" expanded="true" signature="5945:5946" ph="..." />
           </folding>
         </state>
       </provider>

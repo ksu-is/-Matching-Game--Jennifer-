@@ -10,6 +10,7 @@
 # evaluated by Dominic
 '''
 import random, pygame, sys, os, threading
+from time import sleep
 from pygame.locals import *
 
 
@@ -57,6 +58,8 @@ assert len(ALLCOLORS) * len(ALLSHAPES) * 2 >= BOARDWIDTH * BOARDHEIGHT, "Board i
 
 def main():
 
+    t = threading.Timer(7.0, hello)
+    t.start()
 
     global FPSCLOCK, DISPLAYSURF
     pygame.init()
@@ -86,7 +89,7 @@ def main():
 
         for event in pygame.event.get(): # event handling loop
             if event.type == QUIT or (event.type == KEYUP and event.key == K_ESCAPE):
-                pygame.quit()
+                pygame.display.quit()
                 sys.exit()
             elif event.type == MOUSEMOTION:
                 mousex, mousey = event.pos
@@ -135,6 +138,7 @@ def main():
         # Redraw the screen and wait a clock tick.
         pygame.display.update()
         FPSCLOCK.tick(FPS)
+
 SECONDS = 0
 isTimerRunning = True
 
@@ -146,18 +150,20 @@ def hello():
     print(str(SECONDS) + " Seconds")
 
     pygame.display.set_caption('Memory Game: Christmas Edition - ' + secondsText)
-
     if isTimerRunning:
         t = threading.Timer(1.0, hello)
         t.start()
 
+
+
 def exit_handler():
     global isTimerRunning
+    isTimerRunning == False
 
 
-    isTimerRunning = False
-    print('Merry Christmas!')
-
+t = threading.Timer(5.0, exit_handler)
+t.start()
+pygame.display.set_caption('MERRY CHRISTMAS!')
 
 def getAbsolutePath(filename):
     script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
